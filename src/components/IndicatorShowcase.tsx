@@ -19,16 +19,14 @@ export function IndicatorShowcase() {
   const [activeTab, setActiveTab] = useState<'after' | 'before'>('after');
 
   const beforeBlocks = [
-    { name: "Pav. 1 - Cirugía General (Dr. Silva)", time: "08:00 - 11:30", status: "suspendido", reason: "Falta de insumos específicos en bodega", duration: "Susp. 08:15" },
-    { name: "Pav. 1 - Cirugía Traumatólogica", time: "11:30 - 14:00", status: "retrasado", reason: "Retraso en limpieza y turnover (45 min)", duration: "Comenzó 12:15" },
-    { name: "Pav. 1 - Bloque Libre (Sin agendar)", time: "14:00 - 17:00", status: "vacio", reason: "Inactividad / Desconexión administrativa", duration: "Tiempo Muerto" },
+    { name: "Pab. 1 - Cirugía General (Dr. Silva)", time: "08:00 - 11:30", status: "suspendido", reason: "Falta de insumos específicos en bodega", duration: "Susp. 08:15" },
+    { name: "Pab. 1 - Bloque Libre (Sin agendar)", time: "14:00 - 17:00", status: "vacio", reason: "Inactividad / Desconexión administrativa", duration: "Tiempo Muerto" },
   ];
 
   const afterBlocks = [
-    { name: "Pav. 1 - Cirugía General (Pre-habilitado)", time: "08:00 - 10:30", status: "exitoso", reason: "Insumos validados 48 hrs antes", duration: "Finalizado a tiempo" },
-    { name: "Pav. 1 - Cirugía Traumatológica", time: "10:50 - 13:00", status: "exitoso", reason: "Turnover optimizado a 20 min", duration: "Finalizado a tiempo" },
-    { name: "Pav. 1 - Cirugía Urológica (Asignado)", time: "13:20 - 15:30", status: "exitoso", reason: "Agendamiento con modelo predictivo", duration: "Finalizado a tiempo" },
-    { name: "Pav. 1 - Limpieza y Cierre Programado", time: "15:30 - 17:00", status: "exitoso", reason: "Cierre ordenado clínico", duration: "Planificado" },
+    { name: "Pab. 1 - Cirugía General (Pre-habilitado)", time: "08:00 - 11:00", status: "exitoso", reason: "Insumos y pre-habilitación validados", duration: "Finalizado a tiempo" },
+    { name: "Pab. 1 - Cirugía Urológica (Asignado)", time: "11:30 - 14:30", status: "exitoso", reason: "Agendamiento con modelo predictivo", duration: "Finalizado a tiempo" },
+    { name: "Pab. 1 - Limpieza y Cierre Programado", time: "14:30 - 17:00", status: "exitoso", reason: "Cierre ordenado clínico", duration: "Planificado" },
   ];
 
   const metrics: MetricDetail[] = [
@@ -41,28 +39,12 @@ export function IndicatorShowcase() {
       description: "Cancelaciones o reprogramaciones decididas el mismo día de la cirugía."
     },
     {
-      label: "Ocupación Efectiva de Pabellones",
-      before: "62% utilización real",
-      after: "89% aprovechamiento",
-      colorBefore: "text-amber-700 bg-amber-50 border-amber-200",
-      colorAfter: "text-green-700 bg-green-50 border-green-200",
-      description: "Tiempo real de cirugía activa respecto a las horas calendarizadas disponibles."
-    },
-    {
-      label: "Tiempo de Rotación (Turnover)",
-      before: "45-55 mins promedio",
-      after: "20-25 mins estandarizados",
-      colorBefore: "text-red-600 bg-red-50 border-red-200",
-      colorAfter: "text-green-700 bg-green-50 border-green-200",
-      description: "Intervalo desde la salida de un paciente de pabellón hasta el ingreso del siguiente."
-    },
-    {
       label: "Pacientes con Trazabilidad Completa",
       before: "0% (Sistemas aislados)",
       after: "100% (Verificación digital)",
       colorBefore: "text-slate-500 bg-slate-50 border-slate-200",
       colorAfter: "text-green-700 bg-green-50 border-green-200",
-      description: "Pacientes con pre-habilitación e insumos asegurados 48 horas previas al acto quirúrgico."
+      description: "Pacientes con pre-habilitación e insumos asegurados anticipadamente al acto quirúrgico."
     }
   ];
 
@@ -242,29 +224,17 @@ export function IndicatorShowcase() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             
             <div className="p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 transition-all shadow-sm">
               <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                <Clock className="w-5 h-5" />
+                <AlertTriangle className="w-5 h-5 text-amber-500" />
               </div>
               <h4 className="font-bold text-slate-950 font-display text-sm mb-2">
-                Menor Tiempo de Ayuno Crítico
+                Disminución de Suspensiones el Mismo Día
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                El paciente ingresa al pabellón exactamente a la hora programada, evitando descompensaciones metabólicas por ayunos prolongados innecesarios y sed no controlada.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 transition-all shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                <AlertTriangle className="w-5 h-5 text-red-500" />
-              </div>
-              <h4 className="font-bold text-slate-950 font-display text-sm mb-2">
-                Cero Cancelaciones el Mismo Día
-              </h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Tranquilidad emocional completa para el paciente y sus acompañantes directos. Garantizamos que su cirugía no se reprogramará a minutos de ingresar por fallas administrativas.
+                Tranquilidad emocional completa para el paciente y sus acompañantes directos. Gestionamos que su cirugía no se reprogramará a minutos de ingresar por fallas administrativas.
               </p>
             </div>
 
@@ -276,19 +246,7 @@ export function IndicatorShowcase() {
                 Trazabilidad y Pre-habilitación
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Mayor seguridad en el acto médico. El paciente ingresa con todos sus exámenes y pre-habilitación clínica validados por enfermería 48 horas previas al procedimiento.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 transition-all shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                <HeartPulse className="w-5 h-5" />
-              </div>
-              <h4 className="font-bold text-slate-950 font-display text-sm mb-2">
-                Continuidad Asistencial Fluida
-              </h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Personal operacional sereno, descansado y coordinado. Se traduce directamente en un menor índice de infecciones cruzadas y mayor calidez en el trato humano perioperatorio.
+                Mayor seguridad en el acto médico. El paciente ingresa con todos sus exámenes y pre-habilitación clínica validados por enfermería 48 hrs anticipadamente.
               </p>
             </div>
 

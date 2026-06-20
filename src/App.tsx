@@ -28,28 +28,19 @@ import { IndicatorShowcase } from './components/IndicatorShowcase';
 import { LeadMagnetView } from './components/LeadMagnetView';
 import { FAQSection } from './components/FAQSection';
 
+// Import high-definition images generated with Gemini
+import medicalLogo from './assets/images/surgical_governance_logo_1781982201820.jpg';
+import medinetMockup from './assets/images/medinet_platform_mockup_1781982212963.jpg';
+import surgeonsCollaboration from './assets/images/surgeons_collaboration_1781982228113.jpg';
+import hospitalTeamCollaboration from './assets/images/hospital_team_collaboration_1781982239391.jpg';
+
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const handleOpenBooking = () => setIsBookingOpen(true);
   const handleCloseBooking = () => setIsBookingOpen(false);
 
-  const testonials = [
-    {
-      quote: "Estábamos convencidos de que las suspensiones de cirugías de trauma eran inevitables por tratarse de un área de alta complejidad. La metodologí­a del modelo de pre-habilitación quirúrgica dirigida por enfermería nos demostró que el 62% del tiempo muerto era administrativo. En 4 meses bajamos la tasa de suspensión del 15% al 2.1%.",
-      author: "Dr. Roberto Alarcón",
-      role: "Subdirector Médico",
-      institution: "Clínica Hospital Metropolitana",
-      imageAlt: "Retrato del Dr. Roberto Alarcón, Subdirector Médico"
-    },
-    {
-      quote: "El mayor obstáculo no era informático, era la renuencia de los jefes de especialidad médica al ordenamiento centralizado de pabellón. Su enfoque de 'cooperación neutral' liderado por una Enfermera Coordinadora cirujano-enfermera rompió los feudos. Hoy tenemos ocupación arriba del 87% y cirujanos felices porque inician a la hora exacta.",
-      author: "Ing. Andrea Ruiz",
-      role: "Gerente de Operaciones",
-      institution: "Hospital Clínico del Norte",
-      imageAlt: "Retrato de la Ingeniera Andrea Ruiz, Gerente de Operaciones"
-    }
-  ];
+  // Metodología de gobernanza y experiencia clínica consolidada para la mejora continua
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-600 selection:text-white antialiased">
@@ -57,16 +48,16 @@ export default function App() {
       {/* Dynamic Navigation Indicator Banner (NO distracting menu) */}
       <header className="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-blue-900 text-white flex items-center justify-center shadow-sm">
-              <Stethoscope className="w-5 h-5" />
+          <div className="flex items-center gap-3.5 py-1">
+            <div className="w-16 h-16 rounded-full bg-blue-50 overflow-hidden flex items-center justify-center shadow-md border border-blue-900/10 flex-shrink-0">
+              <img src={medicalLogo} alt="APIQ Salud Logo" className="w-full h-full object-cover scale-[1.02]" referrerPolicy="no-referrer" />
             </div>
             <div>
-              <span className="text-sm font-bold font-display text-slate-900 tracking-tight block">
-                Gestión Quirúrgica de Calidad
+              <span className="text-xl font-extrabold font-display text-blue-950 tracking-tight block leading-tight">
+                APIQ Salud
               </span>
-              <span className="text-[10px] text-slate-500 font-mono tracking-wide uppercase block -mt-1">
-                Enfermería de Enlace & Modelos Clínicos
+              <span className="text-[10px] sm:text-[11px] text-slate-500 font-mono tracking-wide uppercase block mt-0.5">
+                Enfermería de Enlace y Modelos Clínicos
               </span>
             </div>
           </div>
@@ -90,48 +81,81 @@ export default function App() {
       <main>
         
         {/* 1. Above the fold: Value proposition and CTA */}
-        <section className="relative overflow-hidden bg-white pt-12 pb-20 md:py-28 border-b border-slate-100">
+        <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:py-24 border-b border-slate-100">
           <div className="absolute inset-0 bg-[radial-gradient(#cfd8dc_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
           
-          <div className="relative max-w-5xl mx-auto px-4 text-center">
-            
-            {/* Target Client pill representation */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-600 mb-6 uppercase tracking-wider">
-              <Users className="w-3.5 h-3.5 text-slate-500" />
-              Exclusivo para Directores Médicos y Gerentes de Operaciones
-            </div>
-
-            {/* Over-Optimized High-Converting Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight md:leading-tight">
-              Trazabilidad y Calidad en su <span className="text-blue-900">Agendamiento Quirúrgico</span>
-            </h1>
-
-            {/* Subheading clarifying core conversion values */}
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mt-6 leading-relaxed">
-              Incorpore un modelo de gestión perioperatorio liderado por enfermería. Reduzca suspensiones preventivas, optimize el tiempo muerto de pabellón y estandarice procesos sin alterar sustancialmente su infraestructura.
-            </p>
-
-            {/* Microcopy + Immediate Above the fold Primary CTA */}
-            <div className="mt-10 flex flex-col items-center justify-center gap-3">
-              <button
-                onClick={handleOpenBooking}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4.5 bg-blue-900 text-white font-bold rounded-xl text-base md:text-lg shadow-xl hover:bg-black hover:scale-[1.02] active:scale-100 transition-all focus:ring-4 focus:ring-blue-300 cursor-pointer text-center"
-              >
-                <Calendar className="w-5 h-5 flex-shrink-0 text-blue-300 animate-pulse" />
-                <span>Agendar Reunión Diagnóstica de 30 minutos</span>
-              </button>
+          <div className="relative max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
-              <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-500 mt-2">
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-4 h-4 text-green-500" /> Incluye Reporte Clave de Suspensiones Quirúrgicas
-                </span>
-                <span className="hidden sm:inline">•</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4 text-slate-400" /> Diagnóstico inicial de una semana sin compromisos
-                </span>
-              </div>
-            </div>
+              {/* Left Column: Text & CTA Content */}
+              <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+                {/* Target Client pill representation */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <Users className="w-3.5 h-3.5 text-slate-500" />
+                  Exclusivo para Directores Médicos y Gerentes de Operaciones
+                </div>
 
+                {/* Over-Optimized High-Converting Headline */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold font-display text-slate-900 tracking-tight leading-tight lg:leading-tight">
+                  Trazabilidad y Calidad en su <span className="text-blue-900">Agendamiento Quirúrgico</span>
+                </h1>
+
+                {/* Subheading clarifying core conversion values */}
+                <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
+                  Incorpore un modelo de gestión perioperatorio liderado por enfermería. Reduzca suspensiones preventivas, optimize el tiempo muerto de pabellón y estandarice procesos sin alterar sustancialmente su infraestructura.
+                </p>
+
+                {/* Microcopy + Immediate Above the fold Primary CTA */}
+                <div className="pt-4 flex flex-col items-center lg:items-start gap-4">
+                  <button
+                    onClick={handleOpenBooking}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white font-bold rounded-xl text-base md:text-md shadow-xl hover:bg-black hover:scale-[1.02] active:scale-100 transition-all focus:ring-4 focus:ring-blue-300 cursor-pointer text-center"
+                  >
+                    <Calendar className="w-5 h-5 flex-shrink-0 text-blue-300 animate-pulse" />
+                    <span>Agendar Reunión Diagnóstica de 30 minutos</span>
+                  </button>
+                  
+                  <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-500 mt-2">
+                    <span className="flex items-center gap-1">
+                      <ShieldCheck className="w-4 h-4 text-green-500" /> Incluye Reporte Clave de Suspensiones Quirúrgicas
+                    </span>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4 text-slate-400" /> Diagnóstico inicial de una semana sin compromisos
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Platform screenshot as a gorgeous browser mockup */}
+              <div className="lg:col-span-5 relative w-full">
+                <div className="relative mx-auto max-w-lg lg:max-w-none rounded-2xl shadow-2xl border border-slate-200/80 bg-slate-50 overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
+                  {/* Browser Chrome Bar */}
+                  <div className="bg-slate-100 border-b border-slate-200 px-4 py-3 flex items-center gap-5 justify-between select-none">
+                    <div className="flex gap-1.5">
+                      <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-yellow-400 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-green-400 inline-block" />
+                    </div>
+                    {/* Fake URL Address line */}
+                    <div className="bg-white rounded-md border border-slate-200/80 text-[10px] text-slate-400 px-3 py-1 w-full max-w-xs text-center font-mono truncate">
+                      https://medinet.apiq.app/trazabilidad-pabellon
+                    </div>
+                    <div className="w-10" /> {/* Balancer */}
+                  </div>
+                  {/* Browser Content */}
+                  <div className="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+                    <img
+                      src={medinetMockup}
+                      alt="Captura de pantalla de la Plataforma de Trazabilidad Quirúrgica Medinet, reflejando cirugías, agendamiento y validación de enfermería"
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -193,8 +217,15 @@ export default function App() {
         </section>
 
         {/* 4. Solución y servicio: 3 Steps function */}
-        <section className="py-20 bg-blue-900 text-white relative">
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
+        <section className="py-20 bg-blue-900 text-white relative overflow-hidden">
+          {/* Subtle logo watermark background */}
+          <div className="absolute -right-16 -bottom-16 w-80 h-80 md:w-[500px] md:h-[500px] opacity-[0.06] pointer-events-none select-none z-0">
+            <img src={medicalLogo} alt="" className="w-full h-full object-contain rounded-full mix-blend-overlay filter invert" referrerPolicy="no-referrer" />
+          </div>
+          <div className="absolute -left-16 -top-16 w-80 h-80 opacity-[0.04] pointer-events-none select-none z-0 hidden md:block">
+            <img src={medicalLogo} alt="" className="w-full h-full object-contain rounded-full mix-blend-overlay filter invert" referrerPolicy="no-referrer" />
+          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10 z-0" />
           
           <div className="relative max-w-5xl mx-auto px-4">
             
@@ -224,7 +255,7 @@ export default function App() {
                   Duración: 1 Semana
                 </span>
                 <p className="text-xs text-blue-100 leading-relaxed">
-                  Auditoría preliminar de los procesos perioperatorios y agendamiento actual. Mapeo de la ventana crítica preoperatoria de 48 horas e identificación de causas de suspensión de cirugías. Concluye con la entrega de un Informe Consolidado de Oportunidades.
+                  Auditoría preliminar de los procesos perioperatorios y agendamiento actual. Mapeo de la ventana crítica de validación anticipada e identificación de causas de suspensión de cirugías. Concluye con la entrega de un Informe Consolidado de Oportunidades.
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-blue-200">
                   <FileCheck2 className="w-4 h-4" /> Entrega de Plan Quirúrgico de Acción
@@ -262,7 +293,7 @@ export default function App() {
                   Implementación y Escalado
                 </h3>
                 <p className="text-xs text-blue-100 leading-relaxed">
-                  Expansión del protocolo validado al 100% de la unidad quirúrgica. Plan de gestión de cambio permanente para anestesia, cirujanos y soporte. Tutorías mensuales sistemáticas y auditorías cruzadas para perpetuar la trazabilidad de la calidad.
+                  Expansión del protocolo validado al 100% de la unidad quirúrgica. Plan de gestión de cambio para el proceso actual de la Institución. Tutorías mensuales sistemáticas y auditorías cruzadas para perpetuar la trazabilidad de la calidad.
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-blue-200">
                   <Award className="w-4 h-4" /> Estándar de acreditación internacional
@@ -288,62 +319,110 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. Prueba social: Testimonials and Credentials */}
+        {/* 6. Experiencia Clínica y Origen de la Metodología APIQ */}
         <section className="py-20 bg-slate-100">
           <div className="max-w-5xl mx-auto px-4">
             
             <div className="text-center mb-12">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 uppercase tracking-wider mb-3">
-                Evidencia Directa & Credenciales
+                Origen & Experiencia Real
               </span>
               <h2 className="text-3xl font-bold font-display text-slate-900 tracking-tight">
-                Respaldada por Directivos de Clínicas e Instituciones de Salud
+                Respaldado por el Conocimiento Operacional y Clínico
               </h2>
+              <p className="text-slate-600 text-sm max-w-2xl mx-auto mt-2">
+                La metodología APIQ no nace de la especulación teórica o de soluciones de software genéricas, sino del trabajo directo en pabellón y el rediseño estructural de procesos de salud.
+              </p>
             </div>
 
-            {/* 2 Testimonials Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {testonials.map((test, index) => (
-                <div key={index} className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                  <div className="text-blue-200 text-5xl font-serif absolute top-4 left-4 select-none">“</div>
-                  <p className="text-xs text-slate-600 leading-relaxed italic relative z-10 pl-6 mb-6">
-                    {test.quote}
+            {/* Visual Anchor: Surgeons in a sterile OR in high definition */}
+            <div className="mb-14 relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/60 bg-white max-w-3xl mx-auto group">
+              <div className="aspect-[21/9] w-full overflow-hidden relative">
+                <img 
+                  src={surgeonsCollaboration} 
+                  alt="Equipo cirujano y anestesiólogo trabajando de forma coordinada bajo parámetros estandarizados de la metodología APIQ" 
+                  className="w-full h-full object-cover transform group-hover:scale-[1.01] transition-all duration-500" 
+                  referrerPolicy="no-referrer" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white text-left">
+                  <span className="text-[10px] uppercase font-mono tracking-wider bg-blue-600/90 text-white px-2 py-0.5 rounded shadow-sm inline-block mb-1.5 font-semibold">
+                    Entorno Perioperatorio Controlado
+                  </span>
+                  <p className="text-[11px] text-slate-100 leading-normal max-w-2xl font-medium">
+                    Cirujanos y personal de anestesia enfocados al 100% en el acto clínico, gracias a una validación administrativa anticipada que reduce las sorpresas operacionales de último minuto.
                   </p>
-                  <div className="flex items-center gap-4 border-t border-slate-100 pt-4">
-                    <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-900 flex items-center justify-center font-bold">
-                      {test.author.split(' ')[1]?.[0]}{test.author.split(' ')[2]?.[0] || 'M'}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-sm leading-tight">{test.author}</h4>
-                      <p className="text-[11px] text-slate-500 font-semibold">{test.role} • {test.institution}</p>
-                    </div>
-                  </div>
                 </div>
-              ))}
+              </div>
             </div>
 
-            {/* Credenciales de la Enfermera Coordinadora */}
+            {/* Core experience metrics mapping */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2 h-full bg-blue-900" />
+                <h3 className="text-4xl font-extrabold font-display text-blue-950 mb-2">20 Años</h3>
+                <h4 className="font-bold text-slate-800 text-sm mb-2">De Servicio en Áreas Quirúrgicas</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Experiencia clínica real en la gestión y desarrollo operacional de servicios de pabellón y unidades críticas, comprendiendo minuciosamente el idioma de cirujanos, anestesiólogos y personal institucional de enfermería.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2 h-full bg-blue-700" />
+                <h3 className="text-4xl font-extrabold font-display text-blue-950 mb-2">10 Años</h3>
+                <h4 className="font-bold text-slate-800 text-sm mb-2">De Agendamiento Eficiente</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Dedicación exclusiva al diseño, modelamiento e implementación de sistemas de agendamiento inteligente. Identificación proactiva de mermas e ineficiencias pasivas en la reserva horaria.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2 h-full bg-emerald-600" />
+                <h3 className="text-4xl font-extrabold font-display text-emerald-600 mb-2">APIQ</h3>
+                <h4 className="font-bold text-slate-800 text-sm mb-2">Metodología Basada en Mejora Continua</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Consolidación de esta vasta trayectoria en un método estandarizado que reduce las suspensiones críticas del mismo día, fomenta la predictibilidad operacional y empodera a los equipos quirúrgicos.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Gobernza e Identidad */}
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center">
               
-              <div className="lg:col-span-4 bg-blue-950 p-8 text-white text-center flex flex-col justify-center items-center h-full relative">
-                <div className="w-20 h-20 rounded-full border-4 border-white/20 bg-white text-blue-950 flex items-center justify-center font-black text-3xl font-display mb-4 relative shadow-inner">
-                  ECQ
-                </div>
-                <h3 className="font-bold font-display text-lg tracking-tight">Enfermera Coordinadora de Planificación Quirúrgica</h3>
-                <span className="text-[10px] uppercase font-mono tracking-widest text-blue-300 block mt-1">Especialista en Modelamiento Clínico</span>
+              <div className="lg:col-span-4 min-h-[320px] lg:min-h-full p-8 text-white text-center flex flex-col justify-center items-center relative overflow-hidden h-full">
+                {/* Background Image of Clinical Team Collaboration */}
+                <img 
+                  src={hospitalTeamCollaboration} 
+                  alt="Coordinación clínica exitosa en hospital" 
+                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none" 
+                  referrerPolicy="no-referrer" 
+                />
+                {/* Dark Blue Overlay */}
+                <div className="absolute inset-0 bg-blue-950/85 backdrop-blur-[1px] z-0" />
                 
-                <div className="mt-4 inline-flex items-center gap-1 text-[10px] py-1 px-2.5 rounded bg-white/10 text-blue-200 border border-white/5">
-                  <Award className="w-3.5 h-3.5" /> 15+ Años de Experiencia Quirúrgica
+                {/* Content Overlay */}
+                <div className="relative z-10 flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 rounded-full border-4 border-white/20 bg-white/95 text-blue-950 flex items-center justify-center font-black text-2xl font-display mb-4 shadow-md">
+                    APIQ
+                  </div>
+                  <h3 className="font-bold font-display text-base tracking-tight text-white leading-snug">Liderazgo de Gestión Quirúrgica</h3>
+                  <span className="text-[9px] uppercase font-mono tracking-widest text-blue-300 block mt-1">Estrategias Clínicas de Enlace</span>
+                  
+                  <div className="mt-4 inline-flex items-center gap-1 text-[9px] py-1 px-2.5 rounded bg-white/10 text-blue-100 border border-white/10 shadow-sm">
+                    <Award className="w-3.5 h-3.5 animate-bounce" /> 20 Años de Trayectoria Quirúrgica
+                  </div>
                 </div>
               </div>
 
               <div className="lg:col-span-8 p-6 md:p-8 space-y-4">
                 <h4 className="text-lg font-bold font-display text-blue-950 flex items-center gap-2">
-                  <UserCheck className="w-5 h-5 text-blue-600" />
+                  <UserCheck className="w-5 h-5 text-blue-600 animate-pulse" />
                   Gobernanza Quirúrgica Centrada en la Coordinación Neutral
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Para sanar las ineficiencias de un pabellón, la dirección médica requiere de un agente de enlace neutral. Mi rol como Enfermera Coordinadora de Planificación Quirúrgica es actuar como puente unificador entre la alta gerencia de operaciones y los intensivistas clínicos:
+                  Para sanar las ineficiencias de un pabellón, la dirección médica requiere de un agente de enlace neutral. Mi rol actúa como puente unificador entre la alta gerencia de operaciones y los clínicos operadores claves del proceso en un seguimiento modelador y de desarrollo profesional, potenciando el capital humano:
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -351,20 +430,20 @@ export default function App() {
                     <span className="text-green-600">✓</span>
                     <div>
                       <strong className="text-slate-800 font-bold block">Visión Asistencial Completa</strong>
-                      <span className="text-[11px] text-slate-500">Especialista en flujos de pre-habilitación clínica e insumos especiales.</span>
+                      <span className="text-[11px] text-slate-500">Modelado continuo desde la validación preparatoria hasta el alta perioperatoria.</span>
                     </div>
                   </div>
                   <div className="flex gap-2 p-2.5 rounded bg-slate-50 border border-slate-100">
                     <span className="text-green-600">✓</span>
                     <div>
-                      <strong className="text-slate-800 font-bold block">Mediador Sindical & Clínico</strong>
-                      <span className="text-[11px] text-slate-500">Resolución activa de feudos interdepartamentales mediante protocolos objetivos.</span>
+                      <strong className="text-slate-800 font-bold block">Modelamiento de Líderes de Proceso</strong>
+                      <span className="text-[11px] text-slate-500 font-medium">Seguimiento y reforzamiento del modelo APIQ en terreno y llevado por los profesionales de la misma Institución.</span>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-[11px] text-slate-500 italic">
-                  * Diseñadora de modelos aprobados de trazabilidad pre-operatoria implementados con éxito en 12 redes asistenciales privadas y públicas de mediana y gran envergadura.
+                  * Diseños validados basados en la mejora continua de la planificación quirúrgica operacional intrahospitalaria.
                 </p>
               </div>
 

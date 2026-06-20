@@ -20,16 +20,6 @@ export function FAQSection() {
       question: "Nuestros cirujanos y equipos médicos tienen una alta resistencia al cambio y defienden con firmeza el manejo de sus tiempos. ¿Cómo abordar esto?",
       answer: "La resistencia médica no proviene del capricho, sino de la desconfianza en la trazabilidad logística estructural (insumos médicos retrasados, turnos con fallas, anulaciones a último momento). Cuando los cirujanos comprueban durante nuestro Plan Piloto de 30 días que la validación quirúrgica neutral anticipada garantiza que su cirugía iniciará y terminará exactamente en sus tiempos predecibles, la resistencia al cambio se disuelve y se integran activamente al modelo.",
       objectionSolved: "Objeción: 'Los equipos clínicos no querrán someterse a nuevas reglas.'"
-    },
-    {
-      question: "El nivel de complejidad de nuestro centro de salud es muy elevado. ¿Un diagnóstico de una semana realmente arroja datos accionables?",
-      answer: "No realizamos informes teóricos copiosos. En solo una semana realizamos una auditoría de procesos de agendamiento en su pabellón quirúrgico real, desgranando los cuellos de botella específicos del preoperatorio inmediato. El informe resultante de fase 1 define brechas cuantificables de ineficiencia por causas administrativas directas, entregando un plan de acción para que su directiva evalúe las oportunidades antes de avanzar al mes de prueba piloto.",
-      objectionSolved: "Objeción: 'Creencia de que las auditorías necesitan meses para funcionar.'"
-    },
-    {
-      question: "Nuestros pabellones están colapsados y la lista de espera sigue creciendo. ¿Cómo puede mejorar esto sin ampliar la infraestructura física?",
-      answer: "La ineficiencia operacional no se corrige aumentando el número de salas de cirugía, sino optimizando de forma estructurada el tiempo muerto interpuesto (Turnover) y bloqueando las suspensiones administrativas prevenibles. Reduciendo la ventana de turnover a un estándar de 20 minutos y erradicando cancelaciones el mismo día, liberamos de forma pasiva hasta un 25% de espacio útil real dentro de su misma infraestructura física actual.",
-      objectionSolved: "Objeción: 'Creencia de que no hay más solución posible si no hay más pabellones físicos.'"
     }
   ];
 
