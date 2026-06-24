@@ -159,7 +159,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             Agendar Reunión Diagnóstica
           </h3>
           <p className="text-blue-100 text-sm mt-2 max-w-lg leading-relaxed">
-            Sesión clínica-operativa de 30 minutos sin costo para cuantificar debilidades de trazabilidad y oportunidades en su área médica.
+            Sesión clínica-operativa de 30 minutos para cuantificar debilidades de trazabilidad y oportunidades en su área médica.
           </p>
           
           {/* Step indicator bubbles */}
