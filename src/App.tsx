@@ -21,8 +21,11 @@ import {
   ChevronRight, 
   PhoneCall, 
   FileText,
-  UserCheck
+  UserCheck,
+  Menu,
+  X
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { BookingModal } from './components/BookingModal';
 import { IndicatorShowcase } from './components/IndicatorShowcase';
 import { LeadMagnetView } from './components/LeadMagnetView';
@@ -80,7 +83,7 @@ export default function App() {
       <main>
         
         {/* 1. Above the fold: Value proposition and CTA */}
-        <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:py-24 border-b border-slate-100">
+        <section id="inicio" className="relative overflow-hidden bg-white pt-12 pb-20 lg:py-24 border-b border-slate-100 scroll-mt-24">
           <div className="absolute inset-0 bg-[radial-gradient(#cfd8dc_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
           
           <div className="relative max-w-6xl mx-auto px-4">
@@ -91,7 +94,7 @@ export default function App() {
                 {/* Target Client pill representation */}
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-600 uppercase tracking-wider">
                   <Users className="w-3.5 h-3.5 text-slate-500" />
-                  Exclusivo para Directores Médicos y Gerentes de Operaciones
+                  Exclusivo para Directores, Gerentes de Operaciones y Gestores de Áreas Quirúrgicas
                 </div>
 
                 {/* Over-Optimized High-Converting Headline */}
@@ -159,10 +162,12 @@ export default function App() {
         </section>
 
         {/* 2. Hero Shot & KPI Visualizations Component */}
-        <IndicatorShowcase />
+        <section id="indicadores" className="scroll-mt-24">
+          <IndicatorShowcase />
+        </section>
 
         {/* 4. Solución y servicio: 3 Steps function */}
-        <section className="py-20 bg-blue-900 text-white relative overflow-hidden">
+        <section id="metodologia" className="py-20 bg-blue-900 text-white relative overflow-hidden scroll-mt-24">
           {/* Centered watermark background behind methodology - representing APIQ methodology */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] md:w-[700px] md:h-[700px] opacity-[0.08] pointer-events-none select-none z-0">
             <img src={medicalLogo} alt="Metodología APIQ" className="w-full h-full object-contain rounded-full mix-blend-overlay filter invert animate-pulse" style={{ animationDuration: '8s' }} referrerPolicy="no-referrer" />
@@ -298,7 +303,7 @@ export default function App() {
         </section>
 
         {/* 6. Experiencia Clínica y Origen de la Metodología APIQ */}
-        <section className="py-20 bg-slate-100">
+        <section id="experiencia" className="py-20 bg-slate-100 scroll-mt-24">
           <div className="max-w-5xl mx-auto px-4">
             
             <div className="text-center mb-12">
@@ -395,7 +400,9 @@ export default function App() {
         </section>
 
         {/* 7. Oferta y Lead magnet */}
-        <LeadMagnetView onOpenBooking={handleOpenBooking} />
+        <section id="descargas" className="scroll-mt-24">
+          <LeadMagnetView onOpenBooking={handleOpenBooking} />
+        </section>
 
         {/* 9. CTA Repetido */}
         <section className="py-16 bg-blue-950 text-white text-center relative border-b border-blue-900">
