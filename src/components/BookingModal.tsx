@@ -439,7 +439,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-950 hover:bg-black text-white font-bold rounded-xl shadow transition-all cursor-pointer text-sm"
               >
                 <Download className="w-4 h-4" />
-                <span>Forzar Descarga de Lead Magnet</span>
+                <span>Descargar Reporte en PDF</span>
               </button>
               
               <button

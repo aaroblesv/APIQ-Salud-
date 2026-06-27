@@ -171,16 +171,36 @@ export default function App() {
           
           <div className="relative max-w-5xl mx-auto px-4">
             
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-800/80 text-blue-200 uppercase tracking-widest mb-3">
                 Metodología de Trabajo Estructurada
               </span>
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white tracking-tight mb-4">
                 Metodología APIQ: Calidad en 3 Fases Claras
               </h2>
-              <p className="text-blue-100 text-sm max-w-xl mx-auto">
+              <p className="text-blue-100 text-sm max-w-xl mx-auto mb-8">
                 No alteramos su rutina diaria de golpe. Evaluamos, probamos a escala controlada y luego expandimos bajo estricta trazabilidad de procesos y gestión del cambio.
               </p>
+
+              {/* Acrónimo de Metodología APIQ® */}
+              <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left border border-white/10 rounded-2xl bg-slate-950/35 p-6 backdrop-blur-sm shadow-xl mb-6">
+                <div className="space-y-1">
+                  <span className="text-xl md:text-2xl font-black text-blue-400 font-display block border-b border-white/10 pb-1">A — Auditoría</span>
+                  <p className="text-[11px] text-blue-100/90 leading-snug">Diagnóstico integral de productividad quirúrgica.</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xl md:text-2xl font-black text-blue-400 font-display block border-b border-white/10 pb-1">P — Productividad</span>
+                  <p className="text-[11px] text-blue-100/90 leading-snug">Identificación de brechas, pérdidas y capacidad instalada.</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xl md:text-2xl font-black text-blue-400 font-display block border-b border-white/10 pb-1">I — Inteligencia Operacional</span>
+                  <p className="text-[11px] text-blue-100/90 leading-snug">Diseño de indicadores y análisis de desempeño.</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xl md:text-2xl font-black text-blue-400 font-display block border-b border-white/10 pb-1">Q — Calidad y Gestión</span>
+                  <p className="text-[11px] text-blue-100/90 leading-snug">Implementación, seguimiento y mejora continua.</p>
+                </div>
+              </div>
             </div>
 
             {/* Structured Formal Timeline Row (Visible in one clean line on desktop) */}
@@ -419,7 +439,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-slate-800/80 gap-4 text-[10px]">
-            <p>© 2026 Planificación Quirúrgica Eficiente. Todos los derechos reservados.</p>
+            <p>© 2026 APIQ Salud. Todos los derechos reservados.</p>
             <div className="flex gap-4">
               <span className="text-slate-600">Modelado en Chile & LatinoAmérica</span>
               <span>•</span>
